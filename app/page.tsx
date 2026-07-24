@@ -6,33 +6,37 @@ const researchTracks = [
     summary:
       "Enabling heterogeneous agent frameworks to evolve and transfer reusable reasoning abstractions through federated semantic distillation — without sharing raw reasoning trajectories.",
     contribution:
-      "First author · Led the problem formulation, system design, multi-framework evaluation, and paper development.",
+      "Led the problem formulation, system design, multi-framework evaluation, and paper development.",
     stack: ["arXiv:2607.21361", "cs.MA", "Federated agents"],
     status: "Public preprint",
+    role: "Co-first author",
     authors: "Weihao Li · Jun Bai · Ziyang Song",
     href: "https://arxiv.org/abs/2607.21361",
   },
   {
     lane: "R2",
     field: "Clinical language models",
-    title: "Reliable medical coding after post-training",
+    title:
+      "Can Post-Training Turn LLMs into Good Medical Coders? An Empirical Study of Generative ICD Coding",
     summary:
       "Building evaluation and post-training pipelines for language models that map long clinical narratives to structured medical codes.",
     contribution:
       "Training infrastructure, distributed inference, evaluation design, and CUDA-level troubleshooting across open-weight model families.",
     stack: ["PyTorch", "Hugging Face", "LoRA", "PPO / GRPO"],
     status: "Manuscript in review",
+    role: "Second author",
   },
   {
     lane: "R3",
     field: "Representation learning",
-    title: "Medical concepts that understand their hierarchy",
+    title: "SMI: Semantic Medical ID for Hierarchy-Aware Concept Representation",
     summary:
       "Studying how hierarchical knowledge can improve representations of medical concepts, especially where examples are scarce.",
     contribution:
       "Ontology construction, multi-level concept alignment, embedding aggregation, and structure-aware analysis.",
     stack: ["Medical ontologies", "Embeddings", "Long-tail learning"],
     status: "Manuscript in review",
+    role: "Fourth author",
   },
 ];
 
@@ -160,9 +164,9 @@ export default function Home() {
           <header className="section-inline">
             <h2 id="research-title">Research</h2>
             <p>
-              One preprint is now public. Ongoing manuscripts remain under peer
-              review, so their titles, results, and collaborator details stay
-              intentionally out of this index.
+              One preprint is public and linked in full. Two ongoing manuscripts
+              are named here, while their results, venues, and collaborator
+              details remain private during peer review.
             </p>
           </header>
 
@@ -184,7 +188,10 @@ export default function Home() {
                       </a>
                     ) : track.title}
                   </h3>
-                  {track.authors ? <p className="paper-authors">{track.authors}</p> : null}
+                  <p className="paper-authors">
+                    {track.role}
+                    {track.authors ? ` · ${track.authors}` : null}
+                  </p>
                   <p>{track.summary}</p>
                   {track.href ? (
                     <a className="paper-link" href={track.href} target="_blank" rel="noreferrer">
@@ -210,8 +217,8 @@ export default function Home() {
             <p>
               <strong>Public when it can be, private when it should be.</strong>
               FedAgentKE is linked in full above. For work still in review, I
-              share the question and my contribution without exposing
-              unpublished details.
+              share the title and my contribution without exposing unpublished
+              results or collaborator details.
             </p>
             <a href="mailto:weihaoli2027@u.northwestern.edu?subject=Research%20conversation">
               Start a research conversation <span aria-hidden="true">↗</span>
