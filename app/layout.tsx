@@ -24,8 +24,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og.png",
-        width: 1728,
-        height: 921,
+        width: 1730,
+        height: 909,
         alt: "Weihao Li",
       },
     ],

@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-24",
+  "route": "app/page.tsx",
+  "framework": "Next.js 16.2.6 / React 19.2.6 / Tailwind CSS 4.2.1",
+  "existing_design_system": false,
+  "existing_hallmark_stamp": null,
+  "existing_motion_library": null,
+  "motion_stance": "CSS-only, one orchestrated entrance, reduced-motion fallback",
+  "previous_palette": "navy, cream, blue, coral, acid",
+  "previous_typography": "Inter/system sans with Georgia emphasis",
+  "content_constraints": [
+    "Preserve public information architecture and verified facts",
+    "Keep manuscripts anonymized while under review",
+    "Do not publish unpublished titles, results, venues, or collaborator details",
+    "Do not add job-title branding"
+  ]
+}
