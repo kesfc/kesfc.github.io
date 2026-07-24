@@ -1,6 +1,19 @@
 const researchTracks = [
   {
     lane: "R1",
+    field: "Federated agent systems",
+    title: "FedAgentKE: Federated Semantic Knowledge Evolution for Heterogeneous Agents",
+    summary:
+      "Enabling heterogeneous agent frameworks to evolve and transfer reusable reasoning abstractions through federated semantic distillation — without sharing raw reasoning trajectories.",
+    contribution:
+      "First author · Led the problem formulation, system design, multi-framework evaluation, and paper development.",
+    stack: ["arXiv:2607.21361", "cs.MA", "Federated agents"],
+    status: "Public preprint",
+    authors: "Weihao Li · Jun Bai · Ziyang Song",
+    href: "https://arxiv.org/abs/2607.21361",
+  },
+  {
+    lane: "R2",
     field: "Clinical language models",
     title: "Reliable medical coding after post-training",
     summary:
@@ -8,9 +21,10 @@ const researchTracks = [
     contribution:
       "Training infrastructure, distributed inference, evaluation design, and CUDA-level troubleshooting across open-weight model families.",
     stack: ["PyTorch", "Hugging Face", "LoRA", "PPO / GRPO"],
+    status: "Manuscript in review",
   },
   {
-    lane: "R2",
+    lane: "R3",
     field: "Representation learning",
     title: "Medical concepts that understand their hierarchy",
     summary:
@@ -18,6 +32,7 @@ const researchTracks = [
     contribution:
       "Ontology construction, multi-level concept alignment, embedding aggregation, and structure-aware analysis.",
     stack: ["Medical ontologies", "Embeddings", "Long-tail learning"],
+    status: "Manuscript in review",
   },
 ];
 
@@ -145,9 +160,9 @@ export default function Home() {
           <header className="section-inline">
             <h2 id="research-title">Research</h2>
             <p>
-              Current questions, carefully shared. Manuscripts are under peer
-              review, so this index omits unpublished titles, results, and
-              collaborator details.
+              One preprint is now public. Ongoing manuscripts remain under peer
+              review, so their titles, results, and collaborator details stay
+              intentionally out of this index.
             </p>
           </header>
 
@@ -158,10 +173,24 @@ export default function Home() {
                 <div className="research-row__main">
                   <div className="row-topline">
                     <span>{track.field}</span>
-                    <span className="review-status">Manuscript in review</span>
+                    <span className={`research-status ${track.href ? "is-public" : ""}`}>
+                      {track.status}
+                    </span>
                   </div>
-                  <h3>{track.title}</h3>
+                  <h3>
+                    {track.href ? (
+                      <a href={track.href} target="_blank" rel="noreferrer">
+                        {track.title}
+                      </a>
+                    ) : track.title}
+                  </h3>
+                  {track.authors ? <p className="paper-authors">{track.authors}</p> : null}
                   <p>{track.summary}</p>
+                  {track.href ? (
+                    <a className="paper-link" href={track.href} target="_blank" rel="noreferrer">
+                      Read on arXiv <span aria-hidden="true">↗</span>
+                    </a>
+                  ) : null}
                   <details>
                     <summary>
                       My contribution
@@ -179,9 +208,10 @@ export default function Home() {
 
           <aside className="review-note">
             <p>
-              <strong>The intentional blur is part of the work.</strong> Good
-              research communication respects peer review. I&apos;m happy to
-              discuss my role and technical decisions when the context is right.
+              <strong>Public when it can be, private when it should be.</strong>
+              FedAgentKE is linked in full above. For work still in review, I
+              share the question and my contribution without exposing
+              unpublished details.
             </p>
             <a href="mailto:weihaoli2027@u.northwestern.edu?subject=Research%20conversation">
               Start a research conversation <span aria-hidden="true">↗</span>
