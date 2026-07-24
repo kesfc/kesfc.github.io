@@ -1,4 +1,4 @@
-/* Hallmark · macrostructure: Index-First · pre-emit critique: P5 H4 E4 S5 R5 V5
+/* Hallmark · macrostructure: Index-First · pre-emit critique: P5 H5 E5 S5 R5 V5
  * genre: editorial · theme: custom
  * vibe: "warm collegiate athletics, quietly competitive"
  * nav: N9 Edge-aligned minimal (cta=text+arrow, wordmark=sans, padding=spacious)
@@ -240,11 +240,8 @@ main,
 }
 
 .record-strip > div {
-  align-items: baseline;
   border-block-end: var(--rule-hair) solid var(--color-rule);
-  display: grid;
-  gap: var(--space-2);
-  grid-template-columns: 5rem minmax(0, 1fr);
+  display: block;
   padding-block: var(--space-4);
 }
 
@@ -263,9 +260,11 @@ main,
 
 .record-strip span {
   color: var(--color-muted);
+  display: block;
   font-family: var(--font-label);
   font-size: var(--text-xs);
   letter-spacing: 0.03em;
+  margin-block-start: var(--space-2);
   text-transform: uppercase;
 }
 
@@ -375,8 +374,7 @@ main,
 .research-row h3,
 .project-row h3,
 .season-log h3,
-.education-list h3,
-.golf-note h3 {
+.education-list h3 {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 700;
@@ -569,8 +567,7 @@ main,
 }
 
 .season-period,
-.education-list article > span,
-.golf-note__label {
+.education-list article > span {
   color: var(--color-muted);
   font-family: var(--font-label);
   font-size: var(--text-xs);
@@ -579,8 +576,7 @@ main,
 }
 
 .season-log h3,
-.education-list h3,
-.golf-note h3 {
+.education-list h3 {
   margin-block: 0 var(--space-1);
 }
 
@@ -610,66 +606,28 @@ main,
   margin-block-end: 0;
 }
 
-.golf-note {
-  align-items: start;
+.golf-feature {
   background: var(--color-ink);
   color: var(--color-paper);
+  margin: 0;
+  min-width: 0;
+}
+
+.golf-feature__image {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.golf-feature figcaption {
+  color: var(--color-paper-3);
   display: grid;
-  gap: var(--space-6);
-  padding: var(--space-8);
-}
-
-.golf-mark {
-  border: var(--rule-hair) solid var(--color-paper-3);
-  height: 6rem;
-  position: relative;
-  width: 6rem;
-}
-
-.golf-mark::before,
-.golf-mark::after {
-  background: var(--color-paper-3);
-  content: "";
-  position: absolute;
-}
-
-.golf-mark::before {
-  block-size: var(--rule-hair);
-  inset-inline: 0;
-  inset-block-start: 50%;
-}
-
-.golf-mark::after {
-  inline-size: var(--rule-hair);
-  inset-block: 0;
-  inset-inline-start: 50%;
-}
-
-.golf-mark span {
-  background: var(--color-accent);
-  border-radius: 50%;
-  height: 1rem;
-  inset-block-start: calc(50% - 0.5rem);
-  inset-inline-start: calc(50% - 0.5rem);
-  position: absolute;
-  width: 1rem;
-  z-index: 1;
-}
-
-.golf-note__label {
-  color: var(--color-paper-3);
-}
-
-.golf-note h3 {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  margin-block: var(--space-3) var(--space-4);
-  max-width: 12ch;
+  font-family: var(--font-label);
+  font-size: var(--text-xs);
+  gap: var(--space-1);
+  letter-spacing: 0.03em;
+  padding: var(--space-4);
   text-transform: uppercase;
-}
-
-.golf-note p {
-  color: var(--color-paper-3);
-  margin-block-end: 0;
 }
 
 .toolkit {
@@ -794,10 +752,6 @@ main,
     grid-template-columns: 2.5rem 8rem minmax(12rem, 0.7fr) minmax(0, 1.3fr);
   }
 
-  .golf-note {
-    grid-template-columns: auto minmax(0, 1fr);
-  }
-
   .toolkit-row {
     grid-template-columns: minmax(8rem, 0.4fr) minmax(0, 1.6fr);
   }
@@ -847,7 +801,7 @@ main,
 
   .about-grid {
     align-items: stretch;
-    grid-template-columns: minmax(0, 1.2fr) minmax(22rem, 0.8fr);
+    grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
   }
 
   .toolkit {

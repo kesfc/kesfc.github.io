@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const researchTracks = [
   {
     lane: "R1",
@@ -116,20 +118,22 @@ export default function Home() {
       <main id="top">
         <section className="profile-intro" aria-labelledby="profile-title">
           <div className="profile-ledger">
-            <h1 id="profile-title">Selected work & field notes</h1>
-            <span>2022 — 2026</span>
+            <h1 id="profile-title">Weihao Li · 李伟豪</h1>
+            <span>Computer science</span>
             <span>Evanston, IL</span>
           </div>
 
           <div className="profile-intro__body">
             <p className="profile-intro__lede">
-              I&apos;m Weihao. I like difficult questions, useful systems, and
-              the patient work between a first idea and something real.
+              I&apos;m Weihao Li, a computer scientist from Chongqing, China,
+              now based in Evanston.
             </p>
             <div className="profile-intro__aside">
               <p>
-                Computer science graduate student at Northwestern, working
-                across research, software, teaching, and competitive golf.
+                I earned my BS in Computer Science at Rensselaer Polytechnic
+                Institute and am pursuing an MS in Computer Science at
+                Northwestern University. My work moves between research,
+                software, teaching, and varsity golf.
               </p>
               <nav className="jump-links" aria-label="Page sections">
                 <a href="#research">Research</a>
@@ -142,16 +146,16 @@ export default function Home() {
 
           <div className="record-strip" aria-label="Profile highlights">
             <div>
-              <strong>4.0</strong>
-              <span>MS GPA</span>
+              <strong>Chongqing</strong>
+              <span>China · Where I&apos;m from</span>
             </div>
             <div>
-              <strong>5×</strong>
-              <span>semesters mentoring</span>
+              <strong>RPI &apos;25</strong>
+              <span>BS · Computer Science</span>
             </div>
             <div>
-              <strong>2027</strong>
-              <span>MS CS · Northwestern</span>
+              <strong>NU &apos;27</strong>
+              <span>MS · Computer Science</span>
             </div>
           </div>
 
@@ -299,16 +303,20 @@ export default function Home() {
               </article>
             </div>
 
-            <aside className="golf-note">
-              <div className="golf-mark" aria-hidden="true">
-                <span />
-              </div>
-              <div>
-                <span className="golf-note__label">Varsity golf</span>
-                <h3>Competitive by habit, patient by necessity.</h3>
-                <p>Liberty League team champion · All-Academic Team</p>
-              </div>
-            </aside>
+            <figure className="golf-feature">
+              <Image
+                className="golf-feature__image"
+                src="/weihao-golf-poster.png"
+                alt="Weihao Li finishing a golf swing on a sunset course in his RPI varsity uniform."
+                width={1672}
+                height={941}
+                sizes="(min-width: 60rem) 56vw, 100vw"
+              />
+              <figcaption>
+                <span>RPI varsity golf</span>
+                <span>Liberty League champion · All-Academic Team</span>
+              </figcaption>
+            </figure>
           </div>
         </section>
 
