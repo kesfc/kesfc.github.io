@@ -128,6 +128,21 @@ export default function Home() {
               I&apos;m Weihao Li, a computer scientist from Chongqing, China,
               now based in Evanston.
             </p>
+            <figure className="profile-portrait">
+              <Image
+                className="profile-portrait__image"
+                src="/weihao-portrait.webp"
+                alt="Portrait of Weihao Li."
+                width={1024}
+                height={1280}
+                sizes="(min-width: 60rem) 24vw, (min-width: 40rem) 38vw, 100vw"
+                priority
+              />
+              <figcaption>
+                <span>Weihao Li · 2026</span>
+                <span>Chongqing → Evanston</span>
+              </figcaption>
+            </figure>
             <div className="profile-intro__aside">
               <p>
                 I earned my BS in Computer Science at Rensselaer Polytechnic
