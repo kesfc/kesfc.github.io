@@ -432,6 +432,13 @@ main,
   margin-block: calc(var(--space-2) * -1) var(--space-4);
 }
 
+.paper-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
 .paper-link {
   align-items: center;
   color: var(--color-accent);

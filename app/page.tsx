@@ -21,12 +21,15 @@ const researchTracks = [
     title:
       "Can Post-Training Turn LLMs into Good Medical Coders? An Empirical Study of Generative ICD Coding",
     summary:
-      "Building evaluation and post-training pipelines for language models that map long clinical narratives to structured medical codes.",
+      "Studying how supervised fine-tuning and reinforcement learning can turn generative LLMs into reliable full-taxonomy ICD coders, including a diagnostic curriculum for missed-code cases.",
     contribution:
       "Training infrastructure, distributed inference, evaluation design, and CUDA-level troubleshooting across open-weight model families.",
-    stack: ["PyTorch", "Hugging Face", "LoRA", "PPO / GRPO"],
-    status: "Manuscript in review",
+    stack: ["arXiv:2606.13940", "cs.CL", "SFT / GRPO / PHI"],
+    status: "Public preprint",
     role: "Second author",
+    authors: "Ziqing Wang · Weihao Li · Shijie Chen · Yuan Luo · Kaize Ding",
+    href: "https://arxiv.org/abs/2606.13940",
+    codeHref: "https://github.com/AlexandreWANG915/LLM4ICD",
   },
   {
     lane: "R3",
@@ -183,9 +186,9 @@ export default function Home() {
           <header className="section-inline">
             <h2 id="research-title">Research</h2>
             <p>
-              One preprint is public and linked in full. Two ongoing manuscripts
-              are named here, while their results, venues, and collaborator
-              details remain private during peer review.
+              Two preprints are public and linked in full. One ongoing manuscript
+              is named here, while its results, venue, and collaborator details
+              remain private during peer review.
             </p>
           </header>
 
@@ -213,9 +216,16 @@ export default function Home() {
                   </p>
                   <p>{track.summary}</p>
                   {track.href ? (
-                    <a className="paper-link" href={track.href} target="_blank" rel="noreferrer">
-                      Read on arXiv <span aria-hidden="true">↗</span>
-                    </a>
+                    <div className="paper-links">
+                      <a className="paper-link" href={track.href} target="_blank" rel="noreferrer">
+                        Read on arXiv <span aria-hidden="true">↗</span>
+                      </a>
+                      {track.codeHref ? (
+                        <a className="paper-link" href={track.codeHref} target="_blank" rel="noreferrer">
+                          View code <span aria-hidden="true">↗</span>
+                        </a>
+                      ) : null}
+                    </div>
                   ) : null}
                   <details>
                     <summary>
@@ -235,9 +245,9 @@ export default function Home() {
           <aside className="review-note">
             <p>
               <strong>Public when it can be, private when it should be.</strong>
-              FedAgentKE is linked in full above. For work still in review, I
-              share the title and my contribution without exposing unpublished
-              results or collaborator details.
+              FedAgentKE and the medical-coding study are linked in full above.
+              For work still in review, I share the title and my contribution
+              without exposing unpublished results or collaborator details.
             </p>
             <a href="mailto:weihaoli2027@u.northwestern.edu?subject=Research%20conversation">
               Start a research conversation <span aria-hidden="true">↗</span>
