@@ -1,26 +1,40 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = new URL(
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kesfc.github.io",
+);
+const pageTitle = "Weihao Li — Homepage";
+const description =
+  "Weihao Li's personal homepage — research in AI agents and clinical language models, software projects, teaching, and varsity golf.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: "Weihao Li | 李伟豪",
-  description:
-    "The personal portfolio of Weihao Li — research, software, teaching, golf, and the space in between.",
+  metadataBase: siteUrl,
+  title: pageTitle,
+  description,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Weihao Li",
+    "李伟豪",
     "machine learning",
     "clinical NLP",
     "medical coding",
     "Northwestern University",
   ],
   authors: [{ name: "Weihao Li" }],
+  creator: "Weihao Li",
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
-    title: "Weihao Li | 李伟豪",
-    description:
-      "Ideas, experiments, and things I've built.",
+    title: pageTitle,
+    description,
     type: "website",
+    url: "/",
+    siteName: "Weihao Li",
     images: [
       {
         url: "/og.png",
@@ -32,16 +46,46 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Weihao Li | 李伟豪",
-    description: "Ideas, experiments, and things I've built.",
+    title: pageTitle,
+    description,
     images: ["/og.png"],
   },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: siteUrl,
+      name: "Weihao Li",
+      alternateName: ["Weihao Li Homepage", "李伟豪"],
+    },
+    {
+      "@type": "Person",
+      "@id": `${siteUrl}#person`,
+      name: "Weihao Li",
+      alternateName: "李伟豪",
+      url: siteUrl,
+      sameAs: [
+        "https://github.com/kesfc",
+        "https://openreview.net/profile?id=~Weihao_Li10",
+      ],
+    },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
