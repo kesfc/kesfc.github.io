@@ -24,8 +24,8 @@ const researchTracks = [
       "Studying how supervised fine-tuning and reinforcement learning can turn generative LLMs into reliable full-taxonomy ICD coders, including a diagnostic curriculum for missed-code cases.",
     contribution:
       "Training infrastructure, distributed inference, evaluation design, and CUDA-level troubleshooting across open-weight model families.",
-    stack: ["Findings of EMNLP", "arXiv:2606.13940", "cs.CL", "SFT / GRPO / PHI"],
-    status: "Accepted · Findings of EMNLP",
+    stack: ["EMNLP Findings 2026", "arXiv:2606.13940", "cs.CL", "SFT / GRPO / PHI"],
+    status: "Accepted · EMNLP Findings 2026",
     role: "Second author",
     authors: "Ziqing Wang · Weihao Li · Shijie Chen · Yuan Luo · Kaize Ding",
     href: "https://arxiv.org/abs/2606.13940",
@@ -187,7 +187,7 @@ export default function Home() {
             <h2 id="research-title">Research</h2>
             <p>
               Two preprints are public and linked in full. One has been accepted
-              to Findings of EMNLP; one remaining manuscript is named here while
+              to EMNLP Findings 2026; one remaining manuscript is named here while
               its results, venue, and collaborator details remain private during
               peer review.
             </p>
@@ -247,7 +247,7 @@ export default function Home() {
             <p>
               <strong>Public when it can be, private when it should be.</strong>
               FedAgentKE and the medical-coding study are linked in full above,
-              with the latter marked as accepted to Findings of EMNLP. For work
+              with the latter marked as accepted to EMNLP Findings 2026. For work
               still in review, I share the title and my contribution without
               exposing unpublished results or collaborator details.
             </p>
