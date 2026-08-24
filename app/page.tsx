@@ -24,8 +24,8 @@ const researchTracks = [
       "Studying how supervised fine-tuning and reinforcement learning can turn generative LLMs into reliable full-taxonomy ICD coders, including a diagnostic curriculum for missed-code cases.",
     contribution:
       "Training infrastructure, distributed inference, evaluation design, and CUDA-level troubleshooting across open-weight model families.",
-    stack: ["arXiv:2606.13940", "cs.CL", "SFT / GRPO / PHI"],
-    status: "Public preprint",
+    stack: ["Findings of EMNLP", "arXiv:2606.13940", "cs.CL", "SFT / GRPO / PHI"],
+    status: "Accepted · Findings of EMNLP",
     role: "Second author",
     authors: "Ziqing Wang · Weihao Li · Shijie Chen · Yuan Luo · Kaize Ding",
     href: "https://arxiv.org/abs/2606.13940",
@@ -186,9 +186,10 @@ export default function Home() {
           <header className="section-inline">
             <h2 id="research-title">Research</h2>
             <p>
-              Two preprints are public and linked in full. One ongoing manuscript
-              is named here, while its results, venue, and collaborator details
-              remain private during peer review.
+              Two preprints are public and linked in full. One has been accepted
+              to Findings of EMNLP; one remaining manuscript is named here while
+              its results, venue, and collaborator details remain private during
+              peer review.
             </p>
           </header>
 
@@ -245,9 +246,10 @@ export default function Home() {
           <aside className="review-note">
             <p>
               <strong>Public when it can be, private when it should be.</strong>
-              FedAgentKE and the medical-coding study are linked in full above.
-              For work still in review, I share the title and my contribution
-              without exposing unpublished results or collaborator details.
+              FedAgentKE and the medical-coding study are linked in full above,
+              with the latter marked as accepted to Findings of EMNLP. For work
+              still in review, I share the title and my contribution without
+              exposing unpublished results or collaborator details.
             </p>
             <a href="mailto:weihaoli2027@u.northwestern.edu?subject=Research%20conversation">
               Start a research conversation <span aria-hidden="true">↗</span>
