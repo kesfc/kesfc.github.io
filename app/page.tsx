@@ -33,6 +33,19 @@ const researchTracks = [
   },
   {
     lane: "R3",
+    field: "Clinical ontology embeddings",
+    title:
+      "HCOE: Hyperbolic Clinical Ontology Embeddings from Biomedical Language Models",
+    summary:
+      "Mapping frozen BioBERT embeddings into hyperbolic space with ontology-guided contrastive learning and coarse-to-fine path aggregation to preserve clinical concept hierarchies and support downstream prediction.",
+    stack: ["IEEE BIBM 2026", "arXiv:2609.30763", "Hyperbolic embeddings", "Clinical ontologies"],
+    status: "Accepted · IEEE BIBM 2026",
+    role: "Co-first author",
+    authors: "Yixuan Li · Weihao Li · Ziyang Song",
+    href: "https://arxiv.org/abs/2609.30763",
+  },
+  {
+    lane: "R4",
     field: "Representation learning",
     title: "SMI: Semantic Medical ID for Hierarchy-Aware Concept Representation",
     summary:
@@ -186,8 +199,8 @@ export default function Home() {
           <header className="section-inline">
             <h2 id="research-title">Research</h2>
             <p>
-              Two preprints are public and linked in full. One has been accepted
-              to EMNLP Findings 2026; one remaining manuscript is named here while
+              Three papers are public and linked in full, including work accepted
+              to EMNLP Findings 2026 and IEEE BIBM 2026. One remaining manuscript is named here while
               its results, venue, and collaborator details remain private during
               peer review.
             </p>
@@ -228,13 +241,13 @@ export default function Home() {
                       ) : null}
                     </div>
                   ) : null}
-                  <details>
+                  {track.contribution ? <details>
                     <summary>
                       My contribution
                       <span aria-hidden="true">+</span>
                     </summary>
                     <p>{track.contribution}</p>
-                  </details>
+                  </details> : null}
                 </div>
                 <ul className="stack-list" aria-label="Methods and tools">
                   {track.stack.map((item) => <li key={item}>{item}</li>)}
@@ -246,8 +259,8 @@ export default function Home() {
           <aside className="review-note">
             <p>
               <strong>Public when it can be, private when it should be.</strong>
-              FedAgentKE and the medical-coding study are linked in full above,
-              with the latter marked as accepted to EMNLP Findings 2026. For work
+              FedAgentKE, the medical-coding study, and HCOE are linked in full
+              above, with conference acceptances noted where applicable. For work
               still in review, I share the title and my contribution without
               exposing unpublished results or collaborator details.
             </p>
